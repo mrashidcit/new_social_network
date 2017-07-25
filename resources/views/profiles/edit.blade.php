@@ -5,17 +5,32 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
-
-                    <center>
-                        <img src="{{ Storage::url($user->avatar) }}" width="140px" height="140px" style="border-radius: 50%;" alt="">
-                    </center>
+                    <div class="panel-heading">Edit your profile.</div>
                     
-                    <p class="text-center">
-                        @if(Auth::id() == $user->id)
-                            <a href="{{ route('profile.edit') }}" class="btn btn-lg btn-info">Edit your profile</a>
-                        @endif
-                    </p>
+                    <div class="panel-body">
+                        <form action="{{ route('profile.update') }}" method="post">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" value="{{ $info->location }}" name="location" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location">About me</label>
+                                <textarea class="form-control" name="about" id="about" cols="30" rows="5" required>{{ $info->about }}</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <p class="text-center">
+                                    <button class="btn-btn-primary btn-lg" type="submit">
+                                        Save your information
+                                    </button>
+                                </p>
+                            </div>
+
+
+                        </form>
+                    </div>
                     
                 </div>
             </div>
