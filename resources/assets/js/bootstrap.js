@@ -11,6 +11,9 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap-sass');
+    require('noty');
+
+
 } catch (e) {}
 
 /**
