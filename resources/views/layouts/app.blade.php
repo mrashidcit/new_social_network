@@ -78,14 +78,16 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/js/app.js"></script>
     <script>
         @if(Session::has('success'))
-            noty({
+             var noty = new Noty({
                 type: 'success',
                 layout: 'top',
                 text: '{{ Session::get('success') }}'
             });
+
+            noty.show();
 
         @endif
     </script>

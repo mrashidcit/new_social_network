@@ -5,6 +5,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
+                    @if (Session::has('success'))
+                        <span class="help-block">
+                                    <strong>{{ Session::get('success') }}</strong>
+                        </span>
+                    @endif
                     <div class="panel-heading">Edit your profile.</div>
                     
                     <div class="panel-body">

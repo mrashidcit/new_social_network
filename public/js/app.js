@@ -820,7 +820,7 @@ try {
   window.$ = window.jQuery = __webpack_require__(13);
 
   __webpack_require__(14);
-  __webpack_require__(15);
+  window.Noty = __webpack_require__(15);
 } catch (e) {}
 
 /**
