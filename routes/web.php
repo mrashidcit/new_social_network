@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/hello', function(){
+    return Auth::user()->hello();
+});
+
 Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/profile/{slug}', [
