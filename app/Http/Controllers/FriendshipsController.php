@@ -23,8 +23,16 @@ class FriendshipsController extends Controller
 
         return ["status" => 0];
 
+    }
 
+    public function add_friend($id){
+        // sending notifications, email, broadcasting. in next lectures
+        return Auth::user()->add_friend($id);
+    }
 
+    public function accept_friend($id){
+        //sending nots
+        return Auth::user()->accept_friend($id);
     }
 
 }

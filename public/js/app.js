@@ -45011,15 +45011,63 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
-        this.$http.get('/check_relationship_status/' + this.profile_user_id).then(function (resp) {
-            console.log(resp);
+        var _this = this;
+
+        this.$http.get('/check_relationship_status/' + this.profile_user_id).then(function (res) {
+            console.log(res);
+            _this.status = res.body.status;
+            _this.loading = false;
         });
     },
 
-    props: ['profile_user_id']
+    props: ['profile_user_id'],
+    data: function data() {
+        return {
+            status: '',
+            loading: true
+        };
+    },
+
+
+    methods: {
+        add_friend: function add_friend() {
+            var _this2 = this;
+
+            this.loading = true;
+            this.$http.get('/add_friend/' + this.profile_user_id).then(function (res) {
+                if (res.body == 1) {
+                    _this2.status = 'waiting';
+                }
+                _this2.loading = false;
+            });
+        },
+        accept_friend: function accept_friend() {
+            var _this3 = this;
+
+            this.loading = true;
+            this.$http.get('/accept_friend/' + this.profile_user_id).then(function (res) {
+                console.log("response of accept_friend");
+                if (res.body == 1) {
+                    _this3.status = 'friends';
+                }
+                _this3.loading = false;
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -45027,14 +45075,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_vm._v("\n        component ready\n    ")])])
-}]}
+  return _c('div', [(_vm.loading) ? _c('p', {
+    staticClass: "text-center"
+  }, [_vm._v("\n        Loading...\n    ")]) : _vm._e(), _vm._v(" "), (!_vm.loading) ? _c('p', {
+    staticClass: "text-center"
+  }, [(_vm.status == 0) ? _c('button', {
+    staticClass: "btn btn-success",
+    on: {
+      "click": _vm.add_friend
+    }
+  }, [_vm._v("Add Friend")]) : _vm._e(), _vm._v(" "), (_vm.status == 'pending') ? _c('button', {
+    staticClass: "btn btn-success",
+    on: {
+      "click": _vm.accept_friend
+    }
+  }, [_vm._v("Accept Friend")]) : _vm._e(), _vm._v(" "), (_vm.status == 'waiting') ? _c('span', {
+    staticClass: "text-success"
+  }, [_vm._v("Waiting for response")]) : _vm._e(), _vm._v(" "), (_vm.status == 'friends') ? _c('span', {
+    staticClass: "text-success"
+  }, [_vm._v("Friends")]) : _vm._e()]) : _vm._e()])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
