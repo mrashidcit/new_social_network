@@ -45,6 +45,11 @@
                         .then((res) => {
                             if(res.body == 1){
                                 this.status = 'waiting'
+                                new Noty({
+                                    type: 'success',
+                                    layout: 'bottomLeft',
+                                    text: 'Friend request sent.'
+                                }).show()
                             }
                             this.loading = false
 
@@ -59,6 +64,11 @@
                             console.log("response of accept_friend")
                             if(res.body == 1){
                                 this.status = 'friends'
+                                new Noty({
+                                    type: 'success',
+                                    layout: 'bottomLeft',
+                                    text: 'You are now friend. Go ahead and hangout.'
+                                }).show()
                             }
                             this.loading = false
 
