@@ -54,3 +54,7 @@ window.Echo = new Echo({
     broadcaster: 'pusher',
      key: '89bef35465023367a24a'
 });
+
+Pusher.log = function(message){
+    window.console.log(message)
+}

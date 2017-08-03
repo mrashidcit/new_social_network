@@ -168,6 +168,10 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
 
+        //Frantz\Generator\GeneratorServiceProvider::class,
+
+
+
         /*
          * Application Service Providers...
          */
