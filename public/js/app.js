@@ -961,6 +961,7 @@ if (token) {
 window.Pusher = __webpack_require__(38);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
+    cluster: 'eu',
     broadcaster: 'pusher',
     key: '89bef35465023367a24a'
 });
