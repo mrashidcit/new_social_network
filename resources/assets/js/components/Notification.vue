@@ -15,7 +15,7 @@
         methods: {
             listen() {
                 Echo.private('App.User.' + this.id)
-                    .notification((notification) => {
+                    .notification( (notification) => {
                         alert('new notification')
                         console.log(notification)
 

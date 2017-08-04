@@ -50,6 +50,9 @@ import Echo from 'laravel-echo'
 
 window.Pusher = require('pusher-js');
 
+// As soon as we Initialize the Echo
+// Echo Initialize the instance Pusher
+
 window.Echo = new Echo({
     broadcaster: 'pusher',
      key: '89bef35465023367a24a'

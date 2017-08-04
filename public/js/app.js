@@ -898,6 +898,7 @@ __webpack_require__(40);
 Vue.component('friend', __webpack_require__(42));
 
 Vue.component('notification', __webpack_require__(45));
+
 var app = new Vue({
   el: '#app'
 });
@@ -959,6 +960,9 @@ if (token) {
 
 
 window.Pusher = __webpack_require__(38);
+
+// As soon as we Initialize the Echo
+// Echo Initialize the instance Pusher
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
     broadcaster: 'pusher',
