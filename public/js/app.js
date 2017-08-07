@@ -970,6 +970,8 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
     cluster: "mt1"
 });
 
+__WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a.channel('App.User.1').listen('');
+
 Pusher.log = function (message) {
     window.console.log(message);
 };
@@ -51690,7 +51692,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
-        this.listen();
+        //this.listen()
         console.log("In mounted() id = " + this.id);
     },
 

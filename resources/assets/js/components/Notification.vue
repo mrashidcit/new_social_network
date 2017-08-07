@@ -7,7 +7,7 @@
 <script>
     export default {
         mounted(){
-            this.listen()
+            //this.listen()
             console.log("In mounted() id = " + this.id)
         },
         props: ['id'],

@@ -59,6 +59,9 @@ window.Echo = new Echo({
     cluster: "mt1"
 });
 
+Echo.channel('App.User.1')
+    .listen('')
+
 Pusher.log = function(message){
     window.console.log(message)
 }
