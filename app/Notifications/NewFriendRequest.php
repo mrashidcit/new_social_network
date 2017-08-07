@@ -59,7 +59,7 @@ class NewFriendRequest extends Notification
         return [
             // Data that going to be broadcast to our front-end
             'name' => $this->user->name,
-            'message' => $this->user->name . ' send you a friend request.'
+            'message' => $this->user->name . ' sent you a friend request.'
         ];
     }
 }

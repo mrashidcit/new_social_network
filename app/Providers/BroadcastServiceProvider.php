@@ -18,7 +18,13 @@ class BroadcastServiceProvider extends ServiceProvider
 
         //require base_path('routes/channels.php');
 
-        Broadcast::channel('App.User.{id}', function($user, $userId){
+        Broadcast::channel('App.User.*', function($user, $userId){
+
+            //$status =  (int) $user->id === (int) $userId;
+            //echo ('in BroadcastServiceProvider Status = ' . $status);
+
+            //return $user;
+
             return (int) $user->id === (int) $userId;
         });
     }

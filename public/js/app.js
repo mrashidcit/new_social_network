@@ -966,7 +966,8 @@ window.Pusher = __webpack_require__(38);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
     broadcaster: 'pusher',
-    key: '89bef35465023367a24a'
+    key: '9bd819b038ba76f3ecbb',
+    cluster: "mt1"
 });
 
 Pusher.log = function (message) {
@@ -51690,13 +51691,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
         this.listen();
-        console.log(this.id);
+        console.log("In mounted() id = " + this.id);
     },
 
     props: ['id'],
 
     methods: {
         listen: function listen() {
+            console.log("In listen() id = " + this.id);
             Echo.private('App.User.' + this.id).notification(function (notification) {
                 alert('new notification');
                 console.log(notification);

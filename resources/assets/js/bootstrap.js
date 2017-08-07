@@ -55,7 +55,8 @@ window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-     key: '89bef35465023367a24a'
+    key: '9bd819b038ba76f3ecbb',
+    cluster: "mt1"
 });
 
 Pusher.log = function(message){
