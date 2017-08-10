@@ -898,6 +898,7 @@ __webpack_require__(40);
 Vue.component('friend', __webpack_require__(42));
 
 Vue.component('notification', __webpack_require__(45));
+
 var app = new Vue({
   el: '#app'
 });
@@ -961,9 +962,8 @@ if (token) {
 window.Pusher = __webpack_require__(38);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
-    cluster: 'eu',
     broadcaster: 'pusher',
-    key: '89bef35465023367a24a'
+    key: '9bd819b038ba76f3ecbb'
 });
 
 Pusher.log = function (message) {
